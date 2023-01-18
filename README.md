@@ -32,13 +32,22 @@ Archive:  ZIP_CODE_040114.zip
 
 ```sh
 $ pipenv install
+...
+
 $ pipenv run ./main.py ZIP_CODE_040114.zip
 263 shapes found
 writing them to ZIP_CODE_040114.kml
+```
 
-$ ls -lh ZIP_CODE_040114.kml
--rw-r--r-- 1 user user 5.7M Jan 18 19:12 ZIP_CODE_040114.kml
+Now you can magically convert KML to KMZ and save some space:
 
+```
+$ zip ZIP_CODE_040114.kmz ZIP_CODE_040114.kml
+  adding: ZIP_CODE_040114.kml (deflated 66%)
+
+$ ls -lh ZIP_CODE_040114.*
+-rw-r--r-- 1 user user 5.7M Jan 18 20:40 ZIP_CODE_040114.kml
+-rw-r--r-- 1 user user 2.0M Jan 18 20:40 ZIP_CODE_040114.kmz
 ```
 
 ### Look!
